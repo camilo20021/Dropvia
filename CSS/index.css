@@ -1,0 +1,99 @@
+/* ESTILOS GENERALES */
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 30px;
+}
+
+/* CONTENEDOR PRINCIPAL */
+
+section{
+    max-width: 1200px;
+    margin: auto;
+}
+
+/* TITULOS */
+
+h2{
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+    color: #111;
+}
+
+h3{
+    color: #ff6600;
+    margin-bottom: 20px;
+}
+
+/* CAJAS */
+
+article{
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+/* INPUTS */
+
+input{
+    width: 100%;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* METODOS DE PAGO */
+
+div{
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fafafa;
+}
+
+/* IMAGENES */
+
+img{
+    display: block;
+    margin-bottom: 15px;
+}
+
+/* BOTONES */
+
+button{
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+/* EFECTO BOTON */
+
+button:hover{
+    background-color: #e65c00;
+}
+
+/* TEXOS */
+
+p{
+    color: #444;
+    font-size: 16px;
+}
+
+/* LINEAS */
+
+hr{
+    margin: 30px 0;
+    border: 1px solid #eee;
+}
