@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica</title>
+</head>
+  
+
+<body>
+    <nav>
+       <h1>Mi nombre es Camilo Quiroga Ardila </h1> 
+       <h1>Presentacion personal</h1>
+       <p>Soy estudiante de tecnico de codificacion de software en TEcAlianza y proximamente entrare a la etapa productiva, 
+        tengo 23 años, estoy laborando en redeban entregando datafonos para los difernetes comercios a nivel bogota y aveces 
+        por fuera de bogota, en mi tiempo libre me gusta escuchar musica, jugar xbox.
+      
+       </p>
+    <li>Estudios Culminados: Tecnico de sistemas - Sena </li>
+    <li>Estudios en curso: Tecnico laboral de software - TecAlianza</li>
+    <h2>Gustos Personales</h2>
+    <h3>Les mostrare mis gustos personales </h3>
+    <ul type="disc">
+   <li>regueton</li>
+   <li>Popular</li>
+   <li>Vachata</li>
+    </ul>
+<h3>Comida favorita</h3>
+ <ul type="disc">
+   <li>Sandwich gourmet</li>
+   <li>Dominos Pizza</li>
+   <li>Wok garden </li>
+    </ul>
+<h3>Pelicula Favorita</h3>
+ <ul type="disc">
+   <li>Toy Story</li>
+   <li>Rapidos & Furiosos</li>
+   <li>Tron </li>
+    </ul>
+
+<style>
+    body { background-color: rgb(28, 158, 245);}
+</style>
