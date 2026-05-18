@@ -1,402 +1,452 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>C&E Urban Wear</title>
 
-    
-
     <link rel="icon" href="IMAGENES/favicon.png">
+
     <link rel="stylesheet" href="CSS/index.css">
+    
 
 </head>
 
 <body>
 
-<header class="header">
+    <!-- ========================= -->
+    <!-- HEADER -->
+    <!-- ========================= -->
 
-    <!-- LOGO -->
-    <div class="logo">
+    <header class="header">
 
-        <img src="IMAGENES/favicon.png" alt="Logo">
+        <div class="logo">
 
-        <h1>C&E URBAN</h1>
+            <img src="IMAGENES/favicon.png" alt="Logo">
 
-    </div>
+            <h1>C&E URBAN</h1>
+
+        </div>
+
+        <nav class="navbar">
+
+            <a href="#">Inicio</a>
+
+            <div class="dropdown">
+
+                <button class="dropbtn">
+                    Productos
+                </button>
+
+                <div class="dropdown-content">
+
+                    <a href="#">Ropa</a>
+
+                    <a href="#">Hogar</a>
+
+                    <a href="#">Moto</a>
+
+                    <a href="#">Tecnología</a>
+
+                    <a href="#">Gaming</a>
+
+                    <a href="#">Accesorios</a>
+
+                </div>
+
+            </div>
+
+            <a href="#">Colecciones</a>
+
+            <a href="#">Nosotros</a>
+
+            <a href="#">Contacto</a>
+
+        </nav>
+        <div class="menu-toggle">
+
+        ☰
+
+</div>
+
+        <div class="icons">
+
+            <span>🔍</span>
+
+            <span>👤</span>
+
+            <div class="cart-icon">
+
+            🛒
+
+            <span id="cart-count">
+                0
+            </span>
+
+</div>
+
+        </div>
+
+    </header>
 
 
 
-    <!-- MENÚ -->
-    <nav class="navbar">
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
 
-        <a href="#">Inicio</a>
+    <section class="hero">
 
-     
-        <div class="dropdown">
+        <div class="hero-text">
 
-            <button class="dropbtn">
-                Productos
+            <p class="subtitulo">
+                NUEVA COLECCIÓN 2026
+            </p>
+
+            <h2>
+                TU ESTILO <br>
+                TUS REGLAS.
+            </h2>
+
+            <p class="descripcion">
+
+                Hoodies y productos urbanos
+                para personas con estilo.
+
+            </p>
+
+            <button>
+                DESCUBRIR COLECCIÓN
             </button>
 
-            <div class="dropdown-content">
+        </div>
 
-                <a href="#">Ropa</a>
+        <div class="hero-img">
 
-                <a href="#">Hogar</a>
+            <img src="IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg" alt="Hero Banner">
 
-                <a href="#">Moto</a>
+        </div>
 
-                <a href="#">Tecnología</a>
+    </section>
 
-                <a href="#">Gaming</a>
 
-                <a href="#">Accesorios</a>
+
+    <!-- ========================= -->
+    <!-- SLIDER -->
+    <!-- ========================= -->
+
+    <section class="slider">
+
+        <div class="slides">
+
+            <div class="slide">
+
+                <img src="IMAGENES/HOODIE (1).png" alt="Slide 1">
+
+            </div>
+
+            <div class="slide">
+
+                <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Slide 2">
+
+            </div>
+
+            <div class="slide">
+
+                <img src="IMAGENES/Nueva colleccion.jpeg" alt="Slide 3">
 
             </div>
 
         </div>
 
-        <a href="#">Colecciones</a>
+    </section>
 
-        <a href="#">Nosotros</a>
 
-        <a href="#">Contacto</a>
 
-    </nav>
+    <!-- ========================= -->
+    <!-- PRODUCTOS -->
+    <!-- ========================= -->
 
+    <section class="productos">
 
+        <div class="productos-header">
 
-    <!-- ICONOS -->
-    <div class="icons">
+            <h2>LO MÁS NUEVO</h2>
 
-        <span>🔍</span>
+            <a href="#">
+                VER TODO
+            </a>
 
-        <span>👤</span>
-
-        <span>🛒</span>
-
-    </div>
-
-</header>
-    <section class="hero">
-
-    <!-- TEXTO -->
-    <div class="hero-text">
-
-        <p class="subtitulo">
-            NUEVA COLECCIÓN 2026
-        </p>
-
-        <h2>
-            TU ESTILO <br>
-            TUS REGLAS.
-        </h2>
-
-        <p class="descripcion">
-
-            Hoodies y productos urbanos
-            para personas con estilo.
-
-        </p>
-
-        <button>
-            DESCUBRIR COLECCIÓN
-        </button>
-
-    </div>
-
-
-
-    <!-- IMAGEN -->
-    <div class="hero-img">
-
-        <img src="IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg" alt="Hero Banner">
-
-    </div>
-
-</section>
-<section class="productos">
-
-    <!-- TITULO -->
-    <div class="productos-header">
-
-        <h2>LO MÁS NUEVO</h2>
-
-        <a href="#">
-            VER TODO
-        </a>
-
-    </div>
-    <div class="categorias">
-
-        <button>Todos</button>
-
-        <button>Ropa</button>
-
-        <button>Accesorios</button>
-
-        <button>Vehículos</button>
-
-        <button>Tecnología</button>
-
-    </div>
-    <div class="productos-grid">
-
-        <!-- PRODUCTO 1 -->
-        <article class="card">
-
-            <img src="IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg" alt="Producto">
-
-            <h3>Hoodie Chaos</h3>
-
-            <p>$95.000</p>
-
-            <button>
-                Comprar
-            </button>
-
-        </article>
-        <article class="card">
-
-            <img src="IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg" alt="Producto">
-
-            <h3>Hoodie C&E</h3>
-
-            <p>$110.000</p>
-
-            <button>
-                Comprar
-            </button>
-
-        </article>
-        <article class="card">
-
-            <img src="IMAGENES/HOODIE (1).png" alt="Producto">
-
-            <h3>Snapback Street</h3>
-
-            <p>$55.000</p>
-
-            <button>
-                Comprar
-            </button>
-
-        </article>
-        <article class="card">
-
-            <img src="img/producto4.png" alt="Producto">
-
-            <h3>Jordan Retro</h3>
-
-            <p>$420.000</p>
-
-            <button>
-                Comprar
-            </button>
-
-        </article>
-
-    </div>
-
-</section>
-<section class="personalizados">
-
-    <!-- TEXTO -->
-    <div class="personalizados-texto">
-
-        <p class="subtitulo-personalizados">
-            HAZLO ÚNICO
-        </p>
-
-        <h2>
-            PERSONALIZA <br>
-            A TU MANERA
-        </h2>
-
-        <p>
-
-            Crea hoodies, camisetas y accesorios
-            con tu propio diseño.
-
-        </p>
-
-        <button>
-            PERSONALIZAR AHORA
-        </button>
-
-    </div>
-
-
-
-    <!-- IMAGEN -->
-    <div class="personalizados-img">
-
-        <img src="IMAGENES/personaliza.jpg" alt="Personalizados">
-
-    </div>
-
-</section>
-<section class="beneficios">
-
-    <!-- BENEFICIO 1 -->
-    <article class="beneficio-card">
-
-        <div class="icono">
-            🚚
         </div>
 
-        <h3>Envíos Rápidos</h3>
+        <div class="categorias">
 
-        <p>
-            Realizamos envíos a todo el país
-            de forma rápida y segura.
-        </p>
+            <button>Todos</button>
 
-    </article>
+            <button>Ropa</button>
 
+            <button>Accesorios</button>
 
+            <button>Vehículos</button>
 
-    <!-- BENEFICIO 2 -->
-    <article class="beneficio-card">
+            <button>Tecnología</button>
 
-        <div class="icono">
-            🔒
         </div>
 
-        <h3>Pagos Seguros</h3>
+        <div class="productos-grid">
 
-        <p>
-            Protegemos todas tus compras
-            con métodos de pago seguros.
-        </p>
+            <article class="card">
 
-    </article>
+                <img src="IMAGENES/Nueva colleccion.jpeg" alt="Producto">
 
+                <h3>Hoodie Chaos</h3>
 
+                <p>$95.000</p>
 
-    <!-- BENEFICIO 3 -->
-    <article class="beneficio-card">
+                <button class="add-cart">
+                    Agregar al carrito
+                </button>
 
-        <div class="icono">
-            ⭐
+            </article>
+
+            <article class="card">
+
+                <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Producto">
+
+                <h3>Hoodie C&E</h3>
+
+                <p>$110.000</p>
+
+                 <button class="add-cart">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+            <article class="card">
+
+                <img src="IMAGENES/HOODIE (1).png" alt="Producto">
+
+                <h3>Snapback Street</h3>
+
+                <p>$55.000</p>
+
+                 <button class="add-cart">
+                    Agregar al carrito
+                </button>
+
+            </article>
+
+            <article class="card">
+
+                <img src="IMAGENES/favicon.png" alt="Producto">
+
+                <h3>Jordan Retro</h3>
+
+                <p>$420.000</p>
+
+                <button>Comprar</button>
+
+            </article>
+
         </div>
 
-        <h3>Calidad Premium</h3>
-
-        <p>
-            Productos modernos con materiales
-            de excelente calidad.
-        </p>
-
-    </article>
+    </section>
 
 
 
-    <!-- BENEFICIO 4 -->
-    <article class="beneficio-card">
+    <!-- ========================= -->
+    <!-- PERSONALIZADOS -->
+    <!-- ========================= -->
 
-        <div class="icono">
-            🎧
+    <section class="personalizados">
+
+        <div class="personalizados-texto">
+
+            <p class="subtitulo-personalizados">
+                HAZLO ÚNICO
+            </p>
+
+            <h2>
+                PERSONALIZA <br>
+                A TU MANERA
+            </h2>
+
+            <p>
+
+                Crea hoodies, camisetas y accesorios
+                con tu propio diseño.
+
+            </p>
+
+            <button>
+                PERSONALIZAR AHORA
+            </button>
+
         </div>
 
-        <h3>Soporte 24/7</h3>
+        <div class="personalizados-img">
 
-        <p>
-            Atención personalizada para ayudarte
-            en cualquier momento.
-        </p>
+            <img src="IMAGENES/personaliza.jpg" alt="Personalizados">
 
-    </article>
+        </div>
 
-</section>
+    </section>
 
 
-</body>
 
-</html>
+    <!-- ========================= -->
+    <!-- BENEFICIOS -->
+    <!-- ========================= -->
 
-    
+    <section class="beneficios">
+
+        <article class="beneficio-card">
+
+            <div class="icono">
+                🚚
+            </div>
+
+            <h3>Envíos Rápidos</h3>
+
+            <p>
+                Realizamos envíos a todo el país
+                de forma rápida y segura.
+            </p>
+
+        </article>
+
+        <article class="beneficio-card">
+
+            <div class="icono">
+                🔒
+            </div>
+
+            <h3>Pagos Seguros</h3>
+
+            <p>
+                Protegemos todas tus compras
+                con métodos de pago seguros.
+            </p>
+
+        </article>
+
+        <article class="beneficio-card">
+
+            <div class="icono">
+                ⭐
+            </div>
+
+            <h3>Calidad Premium</h3>
+
+            <p>
+                Productos modernos con materiales
+                de excelente calidad.
+            </p>
+
+        </article>
+
+        <article class="beneficio-card">
+
+            <div class="icono">
+                🎧
+            </div>
+
+            <h3>Soporte 24/7</h3>
+
+            <p>
+                Atención personalizada para ayudarte
+                en cualquier momento.
+            </p>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
     <footer class="footer">
 
-    <!-- LOGO -->
-    <div class="footer-box">
+        <div class="footer-box">
 
-        <img src="IMAGENES/favicon.png" alt="Logo" width="80">
+            <img src="IMAGENES/favicon.png" alt="Logo" width="80">
 
-        <h2>C&E URBAN</h2>
+            <h2>C&E URBAN</h2>
+
+            <p>
+                Moda urbana, accesorios y productos
+                modernos para todos los estilos.
+            </p>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Enlaces</h3>
+
+            <a href="#">Inicio</a>
+
+            <a href="#">Productos</a>
+
+            <a href="#">Colecciones</a>
+
+            <a href="#">Nosotros</a>
+
+            <a href="#">Contacto</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Categorías</h3>
+
+            <a href="#">Ropa</a>
+
+            <a href="#">Hogar</a>
+
+            <a href="#">Moto</a>
+
+            <a href="#">Gaming</a>
+
+            <a href="#">Tecnología</a>
+
+        </div>
+
+        <div class="footer-box">
+
+            <h3>Contacto</h3>
+
+            <p>📍 Bogotá, Colombia</p>
+
+            <p>📞 +57 300 000 0000</p>
+
+            <p>✉ contacto@ceurban.com</p>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- COPYRIGHT -->
+
+    <div class="copyright">
 
         <p>
-            Moda urbana, accesorios y productos
-            modernos para todos los estilos.
+            © 2026 C&E Urban Wear | Todos los derechos reservados
         </p>
 
     </div>
 
-
-
-    <!-- ENLACES -->
-    <div class="footer-box">
-
-        <h3>Enlaces</h3>
-
-        <a href="#">Inicio</a>
-
-        <a href="#">Productos</a>
-
-        <a href="#">Colecciones</a>
-
-        <a href="#">Nosotros</a>
-
-        <a href="#">Contacto</a>
-
-    </div>
-
-
-
-    <!-- CATEGORÍAS -->
-    <div class="footer-box">
-
-        <h3>Categorías</h3>
-
-        <a href="#">Ropa</a>
-
-        <a href="#">Hogar</a>
-
-        <a href="#">Moto</a>
-
-        <a href="#">Gaming</a>
-
-        <a href="#">Tecnología</a>
-
-    </div>
-
-
-
-    <!-- CONTACTO -->
-    <div class="footer-box">
-
-        <h3>Contacto</h3>
-
-        <p>📍 Bogotá, Colombia</p>
-
-        <p>📞 +57 300 000 0000</p>
-
-        <p>✉ contacto@ceurban.com</p>
-
-    </div>
-
-</footer>
-
-<!-- COPYRIGHT -->
-
-<div class="copyright">
-
-    <p>
-        © 2026 C&E Urban Wear | Todos los derechos reservados
-    </p>
-
-</div>
+    <script src="jvs/index.js"></script>
 </body>
+
 </html>
