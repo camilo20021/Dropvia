@@ -117,6 +117,219 @@ body {
     cursor: pointer;
 }
 
+.product-hero {
+    padding-top: 60px;
+}
+
+.category-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 30px auto 50px;
+    max-width: 1200px;
+    padding: 0 5%;
+}
+
+.category-links a {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.category-links a:hover {
+    background: #ff6600;
+    color: white;
+    transform: translateY(-2px);
+}
+
+    .auth-page {
+        padding: 60px 5%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: calc(100vh - 90px);
+    }
+
+    .auth-card {
+        width: min(520px, 100%);
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(18px);
+        border-radius: 24px;
+        padding: 36px;
+        display: grid;
+        gap: 24px;
+    }
+
+    .auth-card h1 {
+        font-size: 28px;
+        letter-spacing: 1px;
+        margin-bottom: 8px;
+    }
+
+    .user-card {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        border-radius: 16px;
+        padding: 18px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .user-card img {
+        width: 68px;
+        height: 68px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 2px solid #ff6600;
+    }
+
+    .auth-help {
+        display: grid;
+        gap: 18px;
+    }
+
+    .manual-form {
+        display: grid;
+        gap: 14px;
+    }
+
+    .manual-form input,
+    .auth-card button {
+        width: 100%;
+        background: rgba(255,255,255,0.12);
+        border: 1px solid rgba(255,255,255,0.18);
+        color: white;
+        padding: 14px 16px;
+        border-radius: 10px;
+        outline: none;
+    }
+
+    .manual-form button,
+    .logout-btn {
+        cursor: pointer;
+        background: #ff6600;
+        border: none;
+        color: white;
+        font-weight: bold;
+        transition: 0.3s;
+    }
+
+    .manual-form button:hover,
+    .logout-btn:hover {
+        background: #e05500;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    .logout-btn {
+        padding: 14px 16px;
+        border-radius: 10px;
+    }
+
+    .auth-card p {
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    .auth-card a {
+        color: #ff6600;
+        text-decoration: none;
+    }
+
+    margin: 0 auto;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 40px;
+}
+
+.admin-login,
+.dashboard-content {
+    display: grid;
+    gap: 20px;
+}
+
+.admin-login input {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+}
+
+.admin-login button {
+    background: #ff6600;
+    border: none;
+    color: white;
+    padding: 14px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.admin-login button:hover {
+    background: #e05500;
+}
+
+.login-note {
+    color: #bbb;
+    font-size: 14px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.dashboard-stats {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(180px, 1fr));
+    gap: 20px;
+}
+
+.dashboard-stats div {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+}
+
+.dashboard-stats h3 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.orders-table th,
+.orders-table td {
+    padding: 14px 12px;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: white;
+    text-align: left;
+}
+
+.orders-table th {
+    background: rgba(255,255,255,0.05);
+}
+
+.orders-table tr:nth-child(even) {
+    background: rgba(255,255,255,0.04);
+}
+
 /* Menu responsivo: cuando el header tiene .open mostramos la nav en móvil */
 @media (max-width: 768px) {
     .header.open { align-items: flex-start; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iniciar sesión | C&E Urban</title>
+    <link rel="icon" href="IMAGENES/favicon.png">
+    <link rel="stylesheet" href="CSS/index.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="IMAGENES/favicon.png" alt="Logo">
+            <h1>C&E URBAN</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="productos.html">Todos</a>
+                    <a href="ropa.html">Ropa</a>
+                    <a href="accesorios.html">Accesorios</a>
+                    <a href="vehiculos.html">Vehículos</a>
+                    <a href="tecnologia.html">Tecnología</a>
+                </div>
+            </div>
+            <a href="index.html#collections">Colecciones</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="admin.html" class="admin-link">Dashboard</a>
+            <a href="login.html" class="active-link">Iniciar sesión</a>
+        </nav>
+    </header>
+
+    <main class="auth-page">
+        <section class="auth-card">
+            <h1>Iniciar sesión con Google</h1>
+            <div id="google-button"></div>
+            <div id="logged-user" class="user-card hidden">
+                <img id="user-picture" src="" alt="Perfil">
+                <div>
+                    <h2 id="user-name"></h2>
+                    <p id="user-email"></p>
+                </div>
+            </div>
+
+            <div class="auth-help">
+                <p>También puedes registrarte manualmente si no tienes acceso a Google.</p>
+                <form id="manual-register" class="manual-form">
+                    <input type="text" id="manual-name" placeholder="Nombre completo" required>
+                    <input type="email" id="manual-email" placeholder="Correo electrónico" required>
+                    <input type="tel" id="manual-phone" placeholder="Teléfono">
+                    <button type="submit">Registrarme</button>
+                </form>
+            </div>
+
+            <button id="logout-btn" class="logout-btn hidden">Cerrar sesión</button>
+        </section>
+    </main>
+
+    <script src="jvs/auth.js"></script>
+</body>
+</html>

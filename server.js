@@ -40,13 +40,19 @@ async function createTransporter() {
 }
 
 function saveCustomer(customer, callback) {
-    const { nombre, email, telefono } = customer;
-    db.get('SELECT id FROM clientes WHERE email = ?', [email], (err, row) => {
+    const { nombre, email, telefono, google_id, imagen_perfil } = customer;
+    db.get('SELECT id, google_id, imagen_perfil FROM clientes WHERE email = ? OR google_id = ?', [email, google_id], (err, row) => {
         if (err) return callback(err);
         if (row) {
             db.run(
-                'UPDATE clientes SET nombre = ?, telefono = ?, actualizado_en = CURRENT_TIMESTAMP WHERE id = ?',
-                [nombre, telefono, row.id],
+                'UPDATE clientes SET nombre = ?, telefono = ?, google_id = ?, imagen_perfil = ?, actualizado_en = CURRENT_TIMESTAMP WHERE id = ?',
+                [
+                    nombre,
+                    telefono,
+                    google_id || row.google_id || null,
+                    imagen_perfil || row.imagen_perfil || null,
+                    row.id
+                ],
                 function (updateErr) {
                     if (updateErr) return callback(updateErr);
                     callback(null, row.id);
@@ -54,8 +60,8 @@ function saveCustomer(customer, callback) {
             );
         } else {
             db.run(
-                'INSERT INTO clientes (nombre, email, telefono) VALUES (?, ?, ?)',
-                [nombre, email, telefono],
+                'INSERT INTO clientes (nombre, email, telefono, google_id, imagen_perfil) VALUES (?, ?, ?, ?, ?)',
+                [nombre, email, telefono || null, google_id || null, imagen_perfil || null],
                 function (insertErr) {
                     if (insertErr) return callback(insertErr);
                     callback(null, this.lastID);
@@ -110,12 +116,12 @@ function buildEmailHtml(orderData) {
 }
 
 app.post('/api/orders', async (req, res) => {
-    const { nombre, email, direccion, ciudad, telefono, metodo_pago, carrito, subtotal, envio, total } = req.body;
+    const { nombre, email, direccion, ciudad, telefono, metodo_pago, carrito, subtotal, envio, total, googleId, imagen } = req.body;
     if (!nombre || !email || !direccion || !ciudad || !telefono || !metodo_pago || !Array.isArray(carrito) || carrito.length === 0) {
         return res.status(400).json({ error: 'Faltan datos requeridos en la orden.' });
     }
 
-    saveCustomer({ nombre, email, telefono }, (customerErr, cliente_id) => {
+    saveCustomer({ nombre, email, telefono, google_id: googleId, imagen_perfil: imagen }, (customerErr, cliente_id) => {
         if (customerErr) {
             console.error(customerErr);
             return res.status(500).json({ error: 'Error guardando cliente.' });
@@ -168,6 +174,28 @@ app.post('/api/orders', async (req, res) => {
                 res.status(500).json({ success: true, pedidoId, warning: 'Pedido guardado, pero no se pudo enviar el correo.' });
             }
         });
+    });
+});
+
+app.post('/api/auth/google', (req, res) => {
+    const { googleId, nombre, email, imagen } = req.body;
+    if (!googleId || !nombre || !email) {
+        return res.status(400).json({ error: 'Faltan datos de autenticación de Google.' });
+    }
+
+    saveCustomer({
+        nombre,
+        email,
+        telefono: '',
+        google_id: googleId,
+        imagen_perfil: imagen || null
+    }, (err, cliente_id) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).json({ error: 'Error guardando usuario.' });
+        }
+
+        res.json({ success: true, usuario: { id: cliente_id, nombre, email, imagen } });
     });
 });
 

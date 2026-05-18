@@ -1,0 +1,16 @@
+{
+  "name": "ce-urban",
+  "version": "1.0.0",
+  "description": "Tienda urbana con carrito, base de datos y login Google",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.4",
+    "nodemailer": "^6.9.4",
+    "sqlite3": "^5.1.6"
+  }
+}

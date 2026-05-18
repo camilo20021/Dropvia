@@ -2,7 +2,7 @@
     {
         "id": 1,
         "nombre": "Hoodie Chaos",
-        "precio": 95000,
+        "precio": 85000,
         "categoria": "ropa",
         "imagen": "IMAGENES/personaliza.jpg",
         "imagen_carrito": "IMAGENES/personaliza.jpg"
@@ -10,7 +10,7 @@
     {
         "id": 2,
         "nombre": "Hoodie C&E",
-        "precio": 110000,
+        "precio": 92000,
         "categoria": "ropa",
         "imagen": "IMAGENES/Nueva colleccion.jpeg",
         "imagen_carrito": "IMAGENES/Nueva colleccion.jpeg"
@@ -18,20 +18,19 @@
     {
         "id": 3,
         "nombre": "Snapback Street",
-        "precio": 55000,
+        "precio": 45000,
         "categoria": "accesorios",
         "imagen": "IMAGENES/Nueva coleccion (1).jpeg",
         "imagen_carrito": "IMAGENES/Nueva coleccion (1).jpeg"
     },
     {
         "id": 4,
-        "nombre": "Jordan Retro",
-        "precio": 420000,
+        "nombre": "Sudadera Marfil",
+        "precio": 92000,
         "categoria": "ropa",
-        "imagen": "IMAGENES/favicon.png",
-        "imagen_carrito": "IMAGENES/favicon.png"
-    }
-    ,
+        "imagen": "IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg",
+        "imagen_carrito": "IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg"
+    },
     {
         "id": 5,
         "nombre": "Gorra Classic",
@@ -39,5 +38,29 @@
         "categoria": "accesorios",
         "imagen": "IMAGENES/Nueva coleccion (1).jpeg",
         "imagen_carrito": "IMAGENES/Nueva coleccion (1).jpeg"
+    },
+    {
+        "id": 6,
+        "nombre": "Patinete URB",
+        "precio": 260000,
+        "categoria": "vehiculos",
+        "imagen": "IMAGENES/favicon.png",
+        "imagen_carrito": "IMAGENES/favicon.png"
+    },
+    {
+        "id": 7,
+        "nombre": "Smartwatch Street",
+        "precio": 179000,
+        "categoria": "tecnologia",
+        "imagen": "IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg",
+        "imagen_carrito": "IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg"
+    },
+    {
+        "id": 8,
+        "nombre": "Auriculares Urban",
+        "precio": 98000,
+        "categoria": "tecnologia",
+        "imagen": "IMAGENES/Nueva coleccion.jpeg",
+        "imagen_carrito": "IMAGENES/Nueva coleccion.jpeg"
     }
 ]

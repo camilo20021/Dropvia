@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin | C&E Urban</title>
+    <link rel="icon" href="IMAGENES/favicon.png">
+    <link rel="stylesheet" href="CSS/index.css">
+</head>
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="IMAGENES/favicon.png" alt="Logo">
+            <h1>C&E URBAN</h1>
+        </div>
+
+        <nav class="navbar">
+            <a href="index.html">Inicio</a>
+            <div class="dropdown">
+                <button class="dropbtn">Productos</button>
+                <div class="dropdown-content">
+                    <a href="productos.html">Todos</a>
+                    <a href="ropa.html">Ropa</a>
+                    <a href="accesorios.html">Accesorios</a>
+                    <a href="vehiculos.html">Vehículos</a>
+                    <a href="tecnologia.html">Tecnología</a>
+                </div>
+            </div>
+            <a href="index.html#collections">Colecciones</a>
+            <a href="index.html#nosotros">Nosotros</a>
+            <a href="index.html#contacto">Contacto</a>
+            <a href="login.html" class="login-link">Iniciar sesión</a>
+            <a href="admin.html" class="admin-link">Dashboard</a>
+        </nav>
+
+        <div class="menu-toggle">☰</div>
+
+        <div class="icons">
+            <div class="search-container">
+                <input type="text" id="search-input" placeholder="Buscar...">
+                <span class="search-icon">🔍</span>
+            </div>
+        </div>
+    </header>
+
+    <section class="admin-page">
+        <div class="admin-panel" id="admin-panel">
+            <div class="admin-login" id="admin-login">
+                <h2>Login Administrador</h2>
+                <input type="text" id="admin-user" placeholder="Usuario" value="admin">
+                <input type="password" id="admin-pass" placeholder="Contraseña" value="admin123">
+                <button id="admin-login-btn">Ingresar</button>
+                <p class="login-note">Usuario: admin / Contraseña: admin123</p>
+            </div>
+
+            <div class="dashboard-content hidden" id="dashboard-content">
+                <h2>Panel de administración</h2>
+                <div class="dashboard-stats">
+                    <div>
+                        <h3 id="total-orders">0</h3>
+                        <p>Pedidos totales</p>
+                    </div>
+                    <div>
+                        <h3 id="total-revenue">$0</h3>
+                        <p>Ventas totales</p>
+                    </div>
+                </div>
+                <div class="orders-list">
+                    <h3>Últimos pedidos</h3>
+                    <table class="orders-table" id="orders-table">
+                        <thead>
+                            <tr><th>#</th><th>Cliente</th><th>Email</th><th>Total</th><th>Estado</th><th>Fecha</th></tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="jvs/admin.js"></script>
+</body>
+</html>
