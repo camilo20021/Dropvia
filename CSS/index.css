@@ -930,3 +930,67 @@ body{
     background: white;
     color: rgb(242, 9, 9);
 }
+.cart-item{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    background: rgba(255,255,255,0.05);
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    margin-bottom: 20px;
+}
+
+/* IMAGEN */
+
+.cart-item img{
+
+    width: 80px;
+
+    height: 80px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+/* TEXTO */
+
+.cart-item h4{
+
+    margin: 0 0 10px;
+}
+
+.cart-item p{
+
+    color: #ff6600;
+
+    margin: 0;
+}
+
+/* BOTON ELIMINAR */
+
+.remove-item{
+
+    margin-left: auto;
+
+    background: red;
+
+    color: white;
+
+    border: none;
+
+    width: 30px;
+
+    height: 30px;
+
+    border-radius: 50%;
+
+    cursor: pointer;
+}
