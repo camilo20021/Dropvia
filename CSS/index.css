@@ -102,3 +102,67 @@
 .icons span:hover{
     color: #ff6600;
 }
+.hero{
+    background-color: #0d0d0d;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+}
+
+/* TEXTO */
+
+.hero-text{
+    width: 50%;
+}
+
+.subtitulo{
+    color: #999;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.hero-text h2{
+    font-size: 90px;
+    line-height: 90px;
+    margin-bottom: 25px;
+}
+
+.descripcion{
+    color: #ccc;
+    font-size: 18px;
+    margin-bottom: 35px;
+}
+
+/* BOTON */
+
+.hero-text button{
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 18px 35px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.hero-text button:hover{
+    background-color: #ff6600;
+    color: white;
+}
+
+/* IMAGEN */
+
+.hero-img{
+    width: 50%;
+    text-align: center;
+}
+
+.hero-img img{
+    width: 100%;
+    max-width: 550px;
+    border-radius: 20px;
+}
