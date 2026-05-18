@@ -16,13 +16,13 @@
             <div class="checkout-grid">
                 <!-- FORMULARIO CLIENTE -->
                 <form class="checkout-form" id="payment-form">
-                    <input type="text" placeholder="Nombre completo" required>
-                    <input type="email" placeholder="Correo electrónico" required>
-                    <input type="text" placeholder="Dirección de envío" required>
-                    <input type="text" placeholder="Ciudad" required>
-                    <input type="tel" placeholder="Teléfono de contacto" required>
+                    <input id="customer-name" name="customerName" type="text" placeholder="Nombre completo" required>
+                    <input id="customer-email" name="customerEmail" type="email" placeholder="Correo electrónico" required>
+                    <input id="customer-address" name="customerAddress" type="text" placeholder="Dirección de envío" required>
+                    <input id="customer-city" name="customerCity" type="text" placeholder="Ciudad" required>
+                    <input id="customer-phone" name="customerPhone" type="tel" placeholder="Teléfono de contacto" required>
                     
-                    <select required>
+                    <select id="payment-method" name="paymentMethod" required>
                         <option value="">Selecciona método de pago</option>
                         <option value="tarjeta">Tarjeta de Crédito / Débito</option>
                         <option value="nequi">Nequi</option>

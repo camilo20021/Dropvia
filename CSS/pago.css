@@ -6,7 +6,7 @@
 }
 
 body {
-    background: radial-gradient(circle at center, #141414 0%, #080808 100%);
+    background: linear-gradient(125deg, #840808c4 0%, #046519e1 100%);
     color: white;
     min-height: 100vh;
     display: flex;
@@ -51,8 +51,8 @@ body {
 }
 
 .checkout-form input, .checkout-form select {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.35);
     padding: 15px;
     border-radius: 6px;
     color: white;
@@ -61,14 +61,18 @@ body {
     transition: 0.3s;
 }
 
+.checkout-form input::placeholder, .checkout-form select option {
+    color: rgba(255, 255, 255, 0.8);
+}
+
 .checkout-form input:focus, .checkout-form select:focus {
-    border-color: #ff6600;
-    background: rgba(255, 255, 255, 0.06);
-    box-shadow: 0 0 10px rgba(255, 102, 0, 0.2);
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.22);
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.18);
 }
 
 .checkout-form select option {
-    background: #111;
+    background: #1a1a1a;
     color: white;
 }
 

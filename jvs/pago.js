@@ -48,9 +48,19 @@ document.addEventListener("DOMContentLoaded", () => {
     if(formulario) {
         formulario.addEventListener("submit", (e) => {
             e.preventDefault();
-            alert("¡Pedido recibido con éxito! Muchas gracias por comprar en C&E Urban.");
-            localStorage.removeItem("carrito"); // Limpiamos el carrito al finalizar
-            window.location.href = "index.html"; // Redirección a Home
+
+            const nombre = document.getElementById('customer-name')?.value || '';
+            const email = document.getElementById('customer-email')?.value || '';
+            const direccion = document.getElementById('customer-address')?.value || '';
+            const ciudad = document.getElementById('customer-city')?.value || '';
+            const telefono = document.getElementById('customer-phone')?.value || '';
+            const metodo = document.getElementById('payment-method')?.value || '';
+
+            const productosTexto = carrito.map(p => `- ${p.nombre}: $${p.precio.toLocaleString()}`).join('\n');
+            const mensaje = `Hola C&E Urban,\n\nQuiero finalizar mi compra con los siguientes datos:\nNombre: ${nombre}\nEmail: ${email}\nDirección: ${direccion}\nCiudad: ${ciudad}\nTeléfono: ${telefono}\nMétodo de pago: ${metodo}\n\nProductos:\n${productosTexto}\n\nTotal: ${subtotalEl.textContent}\n\nGracias.`;
+            const whatsappUrl = `https://wa.me/573142921523?text=${encodeURIComponent(mensaje)}`;
+            localStorage.removeItem("carrito");
+            window.location.href = whatsappUrl;
         });
     }
 });
