@@ -11,11 +11,13 @@ document.addEventListener("DOMContentLoaded", () => {
     cargarProductos();
     configurarFiltros();
     configurarBuscador();
+    iniciarCarrusel();
+    configurarMenuHamburguesa();
 });
 
 async function cargarProductos() {
     try {
-        const respuesta = await fetch('productos.json');
+        const respuesta = await fetch('data/productos.json');
         listaProductos = await respuesta.json();
         mostrarProductos(listaProductos);
     } catch (error) {
@@ -89,5 +91,126 @@ function configurarBuscador() {
         });
 
         mostrarProductos(productosFiltrados);
+    });
+}
+
+// Inicia la rotación automática del carrusel
+function iniciarCarrusel(interval = 2500, visibleDesktop = 3) {
+    const container = document.querySelector('.carrusel-contenedor');
+    const track = document.querySelector('.carrusel-imagenes');
+    if (!container || !track) return;
+
+    let items = Array.from(track.querySelectorAll('.carrusel-item'));
+    if (items.length === 0) return;
+
+    let visible = window.innerWidth < 768 ? 1 : visibleDesktop;
+    let index = 0;
+    let itemWidth = 0;
+    let autoTimer = null;
+
+    function setup() {
+        // limpiar clones previos
+        const clones = track.querySelectorAll('.clone-item');
+        clones.forEach(c => c.remove());
+
+        items = Array.from(track.querySelectorAll('.carrusel-item'));
+        visible = window.innerWidth < 768 ? 1 : visibleDesktop;
+        itemWidth = container.clientWidth / visible;
+
+        // fijar ancho de cada item
+        items.forEach(it => {
+            it.style.flex = `0 0 ${itemWidth}px`;
+            it.style.width = `${itemWidth}px`;
+        });
+
+        // clonar primeros visibles para bucle infinito
+        for (let i = 0; i < visible; i++) {
+            const clone = items[i].cloneNode(true);
+            clone.classList.add('clone-item');
+            // asegurar que el clone tenga el mismo tamaño
+            clone.style.flex = `0 0 ${itemWidth}px`;
+            clone.style.width = `${itemWidth}px`;
+            track.appendChild(clone);
+        }
+
+        // reset posición
+        track.style.transition = 'none';
+        index = 0;
+        track.style.transform = `translateX(0px)`;
+        // forzar reflow
+        void track.offsetWidth;
+        track.style.transition = 'transform 0.6s ease';
+    }
+
+    function next() {
+        index++;
+        track.style.transform = `translateX(${-index * itemWidth}px)`;
+
+        const totalOriginal = items.length;
+        // cuando lleguemos al final (mostrando clones), saltar al inicio sin animación
+        if (index >= totalOriginal) {
+            setTimeout(() => {
+                track.style.transition = 'none';
+                index = 0;
+                track.style.transform = `translateX(0px)`;
+                // reactivar transición
+                void track.offsetWidth;
+                track.style.transition = 'transform 0.6s ease';
+            }, 620);
+        }
+    }
+
+    function start() {
+        stop();
+        autoTimer = setInterval(next, interval);
+    }
+
+    function stop() {
+        if (autoTimer) {
+            clearInterval(autoTimer);
+            autoTimer = null;
+        }
+    }
+
+    // manejar redimensionado
+    let resizeTimer = null;
+    function onResize() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            setup();
+        }, 150);
+    }
+
+    // inicializar
+    setup();
+    start();
+
+    // pausar al hover
+    container.addEventListener('mouseenter', stop);
+    container.addEventListener('mouseleave', start);
+    window.addEventListener('resize', onResize);
+}
+
+// Maneja el botón hamburguesa en mobile
+function configurarMenuHamburguesa() {
+    const toggle = document.querySelector('.menu-toggle');
+    const header = document.querySelector('.header');
+    const navLinks = document.querySelectorAll('.navbar a');
+    if (!toggle || !header) return;
+
+    toggle.addEventListener('click', () => {
+        header.classList.toggle('open');
+        // cambiar icono simple
+        toggle.textContent = header.classList.contains('open') ? '✖' : '☰';
+    });
+
+    // cerrar al pulsar un link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            if (header.classList.contains('open')) {
+                header.classList.remove('open');
+                toggle.textContent = '☰';
+            }
+        });
     });
 }

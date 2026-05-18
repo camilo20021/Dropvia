@@ -31,4 +31,13 @@
         "imagen": "IMAGENES/favicon.png",
         "imagen_carrito": "IMAGENES/favicon.png"
     }
+    ,
+    {
+        "id": 5,
+        "nombre": "Gorra Classic",
+        "precio": 35000,
+        "categoria": "accesorios",
+        "imagen": "IMAGENES/Nueva coleccion (1).jpeg",
+        "imagen_carrito": "IMAGENES/Nueva coleccion (1).jpeg"
+    }
 ]

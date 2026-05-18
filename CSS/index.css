@@ -9,9 +9,19 @@
 }
 
 body {
-    background: radial-gradient(circle at center, #1a1a1a 0%, #0d0d0d 100%);
+    background: linear-gradient(135deg, #ff4d4d 0%, #4d4dff 100%);
     color: white;
     overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* capa sutil para oscurecer y dar contraste al contenido */
+.site-overlay {
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.45));
+    pointer-events: none;
+    z-index: 0;
 }
 
 /* ========================================== */
@@ -105,6 +115,27 @@ body {
     display: none;
     font-size: 24px;
     cursor: pointer;
+}
+
+/* Menu responsivo: cuando el header tiene .open mostramos la nav en móvil */
+@media (max-width: 768px) {
+    .header.open { align-items: flex-start; }
+    .header.open .navbar {
+        display: flex;
+        position: absolute;
+        top: 68px;
+        left: 0;
+        right: 0;
+        background: rgba(0,0,0,0.7);
+        flex-direction: column;
+        gap: 0;
+        padding: 10px 5%;
+        z-index: 150;
+    }
+    .header.open .navbar a, .header.open .dropbtn {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
 }
 
 /* INTERFAZ DEL BUSCADOR */
@@ -201,6 +232,24 @@ body {
     cursor: pointer;
     font-size: 18px;
     transition: 0.3s;
+}
+
+.cart-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.clear-cart {
+    background: transparent;
+    border: none;
+    color: #ff6666;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.clear-cart:hover {
+    transform: scale(1.05);
 }
 
 .close-cart:hover {
@@ -363,30 +412,58 @@ body {
 }
 
 /* SLIDER */
-.slider {
+.carrusel-contenedor {
+    position: relative; /* Necesario para ubicar los botones encima */
     width: 100%;
+    max-width: 1200px;
+    height: 520px;
+    margin: 0 auto;
     overflow: hidden;
-    padding: 40px 0;
-}
-
-.slides {
-    display: flex;
-    width: 300%;
-    animation: slideAnimation 12s infinite ease-in-out;
-}
-
-.slide {
-    width: 33.33%;
-    display: flex;
-    justify-content: center;
-    padding: 0 5%;
-}
-
-.slide img {
-    width: 100%;
-    max-height: 400px;
-    object-fit: cover;
     border-radius: 12px;
+}
+
+/* Escondemos todas las imágenes por defecto */
+.carrusel-imagenes {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    transition: transform 0.6s ease;
+    will-change: transform;
+}
+
+.carrusel-item {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+    background: transparent;
+    padding: 0;
+}
+
+/* Ajustes responsivos para móviles */
+@media (max-width: 768px) {
+    .carrusel-contenedor { height: 320px; }
+}
+
+/* Solo se ve la que tenga la clase 'active' */
+/* .carrusel-item.active no necesita bloqueo con la nueva implementación */
+
+/* Estilo rápido para los botones flotantes */
+.btn-carrusel {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 50%;
 }
 
 @keyframes slideAnimation {

@@ -67,7 +67,10 @@
         <!-- HEADER -->
         <div class="cart-header">
             <h2>Tu Carrito</h2>
-            <span class="close-cart">✖</span>
+            <div class="cart-header-actions">
+                <button class="clear-cart" title="Vaciar carrito">🗑️</button>
+                <span class="close-cart">✖</span>
+            </div>
         </div>
 
         <!-- PRODUCTOS -->
@@ -106,17 +109,13 @@
     <!-- SLIDER -->
     <!-- ========================= -->
     <section class="slider">
-        <div class="slides">
-            <div class="slide">
-                <img src="IMAGENES/HOODIE (1).png" alt="Slide 1">
-            </div>
-            <div class="slide">
-                <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Slide 2">
-            </div>
-            <div class="slide">
-                <img src="IMAGENES/Nueva colleccion.jpeg" alt="Slide 3">
-            </div>
+      <div class="carrusel-contenedor">
+        <div class="carrusel-imagenes">
+        <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Producto 1" class="carrusel-item active">
+        <img src="IMAGENES/Nueva colleccion.jpeg" alt="Producto 2" class="carrusel-item">
+        <img src="IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg" alt="Producto 3" class="carrusel-item">
         </div>
+    </div>
     </section>
 
     <!-- ========================= -->
@@ -137,8 +136,43 @@
             <button class="btn-categoria" data-category="tecnologia">Tecnología</button>
         </div>
 
-        <!-- Contenedor donde se inyectará el JSON mediante JS -->
-        <div class="productos-grid" id="productos-container"></div>
+        <!-- Contenedor con 5 productos estáticos (para habilitar carrito) -->
+        <div class="productos-grid" id="productos-container">
+            <article class="card">
+                <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Hoodie Marfil">
+                <h3>Hoodie Marfil</h3>
+                <p>$85,000</p>
+                <button class="add-cart" data-name="Hoodie Marfil" data-price="85000" data-img="IMAGENES/Nueva coleccion (1).jpeg">Agregar al carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="IMAGENES/Nueva colleccion.jpeg" alt="Hoodie Negro">
+                <h3>Hoodie Negro</h3>
+                <p>$79,000</p>
+                <button class="add-cart" data-name="Hoodie Negro" data-price="79000" data-img="IMAGENES/Nueva colleccion.jpeg">Agregar al carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg" alt="Hoodie Marshmello">
+                <h3>Hoodie Marshmello</h3>
+                <p>$92,000</p>
+                <button class="add-cart" data-name="Hoodie Marshmello" data-price="92000" data-img="IMAGENES/1764421015MARSHMELLO RAMON MARFIL.jpg">Agregar al carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg" alt="Sudadera Urbana">
+                <h3>Sudadera Urbana</h3>
+                <p>$68,000</p>
+                <button class="add-cart" data-name="Sudadera Urbana" data-price="68000" data-img="IMAGENES/1716945775WhatsApp Image 2024-05-27 at 9.38.36 PM.jpeg">Agregar al carrito</button>
+            </article>
+
+            <article class="card">
+                <img src="IMAGENES/Nueva coleccion (1).jpeg" alt="Gorra Classic">
+                <h3>Gorra Classic</h3>
+                <p>$35,000</p>
+                <button class="add-cart" data-name="Gorra Classic" data-price="35000" data-img="IMAGENES/Nueva coleccion (1).jpeg">Agregar al carrito</button>
+            </article>
+        </div>
     </section>
 
     <!-- ========================= -->
