@@ -1,4 +1,5 @@
 const botonesCarrito = document.querySelectorAll(".add-cart");
+const toast = document.querySelector(".toast");
 
 const contador = document.getElementById("cart-count");
 
@@ -37,6 +38,17 @@ closeCart.addEventListener("click", () => {
 botonesCarrito.forEach(boton => {
 
     boton.addEventListener("click", () => {
+        /* MOSTRAR TOAST */
+
+        toast.classList.add("show");
+
+        /* OCULTAR */
+
+        setTimeout(() => {
+
+            toast.classList.remove("show");
+
+        }, 2500);
 
         /* DATOS */
 

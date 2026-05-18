@@ -1004,3 +1004,38 @@ body{
 
     align-items: center;
 }
+.toast{
+
+    position: fixed;
+
+    bottom: 30px;
+
+    right: 30px;
+
+    background: rgba(20,20,20,0.95);
+
+    color: white;
+
+    padding: 18px 28px;
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+
+    transform: translateX(500px);
+
+    transition: 0.4s ease;
+
+    z-index: 5000;
+}
+
+/* MOSTRAR */
+
+.toast.show{
+
+    transform: translateX(0);
+}
