@@ -30,3 +30,24 @@ botonesCarrito.forEach(boton => {
     });
 
 });
+const cartIcon = document.querySelector(".cart-icon");
+
+const cartPanel = document.querySelector(".cart-panel");
+
+const closeCart = document.querySelector(".close-cart");
+
+/* ABRIR */
+
+cartIcon.addEventListener("click", () => {
+
+    cartPanel.classList.add("active");
+
+});
+
+/* CERRAR */
+
+closeCart.addEventListener("click", () => {
+
+    cartPanel.classList.remove("active");
+
+});
