@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", () => {
             const direccion = document.getElementById('customer-address')?.value || '';
             const ciudad = document.getElementById('customer-city')?.value || '';
             const telefono = document.getElementById('customer-phone')?.value || '';
-            const metodo = document.getElementById('payment-method')?.value || '';
+            const metodo_pago = document.getElementById('payment-method')?.value || '';
 
-            const productosTexto = carrito.map(p => `- ${p.nombre}: $${p.precio.toLocaleString()}`).join('\n');
-            const mensaje = `Hola C&E Urban,\n\nQuiero finalizar mi compra con los siguientes datos:\nNombre: ${nombre}\nEmail: ${email}\nDirección: ${direccion}\nCiudad: ${ciudad}\nTeléfono: ${telefono}\nMétodo de pago: ${metodo}\n\nProductos:\n${productosTexto}\n\nTotal: ${subtotalEl.textContent}\n\nGracias.`;
-            const whatsappUrl = `https://wa.me/573142921523?text=${encodeURIComponent(mensaje)}`;
-            localStorage.removeItem("carrito");
+            const productosTexto = carrito.map(p => `- ${p.nombre} x${p.cantidad || 1}: $${p.precio.toLocaleString()}`).join('\n');
+            const mensaje = `Hola C&E Urban,%0A%0AHe terminado de seleccionar mi pedido y necesito el link de pago.%0A%0ANombre: ${encodeURIComponent(nombre)}%0AEmail: ${encodeURIComponent(email)}%0ADirección: ${encodeURIComponent(direccion)}%0ACiudad: ${encodeURIComponent(ciudad)}%0ATeléfono: ${encodeURIComponent(telefono)}%0AMétodo de pago: ${encodeURIComponent(metodo_pago)}%0A%0AProductos:%0A${encodeURIComponent(productosTexto)}%0A%0ATotal: ${encodeURIComponent(subtotalEl.textContent)}%0A%0AMuchas gracias.`;
+
+            const whatsappUrl = `https://wa.me/573142921523?text=${mensaje}`;
             window.location.href = whatsappUrl;
         });
     }
