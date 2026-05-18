@@ -5,7 +5,7 @@ body{
 
     /* FONDO DIFUMINADO */
     background:
-    radial-gradient(circle at top left, rgba(36, 2, 255, 0.786), transparent 45%),
+    radial-gradient(circle at top left, rgba(53, 4, 152, 0.77), transparent 45%),
     radial-gradient(circle at top right, rgba(255, 0, 0, 0.593), transparent 45%),
     radial-gradient(circle at bottom center, rgba(255, 255, 255, 0.148), transparent 40%),
     #0d0d0d;
