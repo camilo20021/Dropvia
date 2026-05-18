@@ -1,5 +1,21 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    /* FONDO DIFUMINADO */
+    background:
+    radial-gradient(circle at top left, rgba(36, 2, 255, 0.786), transparent 45%),
+    radial-gradient(circle at top right, rgba(255, 0, 0, 0.593), transparent 45%),
+    radial-gradient(circle at bottom center, rgba(255, 255, 255, 0.148), transparent 40%),
+    #0d0d0d;
+
+    background-attachment: fixed;
+
+    color: white;
+}
 .header{
-    background-color: #0d0d0d;
+    background: transparent;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,7 +67,7 @@
 }
 
 .dropbtn{
-    background: none;
+   background: transparent;
     border: none;
     color: white;
     font-size: 16px;
@@ -61,7 +77,7 @@
 .dropdown-content{
     display: none;
     position: absolute;
-    background-color: #1a1a1a;
+    background: transparent;
     min-width: 220px;
     border-radius: 10px;
     overflow: hidden;
@@ -76,7 +92,7 @@
 }
 
 .dropdown-content a:hover{
-    background-color: #222;
+    background: transparent;
 }
 
 /* MOSTRAR MENU */
@@ -103,7 +119,7 @@
     color: #ff6600;
 }
 .hero{
-    background-color: #0d0d0d;
+    background: transparent;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -167,7 +183,7 @@
     border-radius: 20px;
 }
 .productos{
-    background-color: #111;
+    background: transparent;;
     padding: 80px 60px;
     color: white;
 }
@@ -222,11 +238,9 @@
 /* CARD */
 
 .card{
-    background-color: #1a1a1a;
-    border-radius: 20px;
-    overflow: hidden;
-    padding: 20px;
-    transition: 0.3s;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
 .card:hover{
@@ -274,7 +288,7 @@
     color: black;
 }
 .personalizados{
-    background-color: #0d0d0d;
+    background: transparent;
     color: white;
     display: flex;
     align-items: center;
@@ -336,7 +350,7 @@
     border-radius: 20px;
 }
 .beneficios{
-    background-color: #111;
+    background: transparent;
     padding: 80px 60px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
@@ -379,7 +393,7 @@
     line-height: 28px;
 }
 .footer{
-    background-color: #0d0d0d;
+    background: transparent;
     padding: 80px 60px;
     display: grid;
     grid-template-columns: repeat(4,1fr);
