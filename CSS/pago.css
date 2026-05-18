@@ -1,0 +1,313 @@
+
+body{
+
+    margin: 0;
+    padding: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background:
+    radial-gradient(circle at top left, rgba(53, 4, 152, 0.77), transparent 45%),
+    radial-gradient(circle at top right, rgba(255, 0, 0, 0.593), transparent 45%),
+    radial-gradient(circle at bottom center, rgba(255, 255, 255, 0.148), transparent 40%),
+    #0d0d0d;
+
+    background-attachment: fixed;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow-x: hidden;
+}
+
+/* ========================= */
+/* CONTENEDOR */
+/* ========================= */
+
+.checkout-page{
+
+    width: 100%;
+
+    padding: 40px 20px;
+}
+
+/* CARD */
+
+.checkout-container{
+
+    max-width: 550px;
+
+    margin: auto;
+
+    background: rgba(255,255,255,0.05);
+
+    backdrop-filter: blur(15px);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 25px;
+
+    padding: 50px 40px;
+
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+}
+
+/* ========================= */
+/* TITULO */
+/* ========================= */
+
+.checkout-container h1{
+
+    text-align: center;
+
+    font-size: 42px;
+
+    margin-bottom: 40px;
+}
+
+/* ========================= */
+/* FORMULARIO */
+/* ========================= */
+
+.checkout-form{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+}
+
+/* INPUTS */
+
+.checkout-form input,
+.checkout-form select{
+
+    width: 100%;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    background: rgba(255,255,255,0.05);
+
+    color: white;
+
+    font-size: 15px;
+
+    outline: none;
+
+    box-sizing: border-box;
+
+    transition: 0.3s;
+}
+
+/* FOCUS */
+
+.checkout-form input:focus,
+.checkout-form select:focus{
+
+    border-color: #ff6600;
+
+    box-shadow: 0 0 10px rgba(255,102,0,0.4);
+}
+
+/* OPTIONS */
+
+.checkout-form option{
+    background: #111;
+}
+
+/* BOTON */
+
+.checkout-form button{
+
+    background: #ff6600;
+
+    color: white;
+
+    border: none;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+    margin-top: 10px;
+}
+
+/* HOVER */
+
+.checkout-form button:hover{
+
+    background: white;
+
+    color: black;
+
+    transform: translateY(-3px);
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+@media(max-width: 768px){
+
+    .checkout-container{
+
+        padding: 40px 25px;
+    }
+
+    .checkout-container h1{
+
+        font-size: 32px;
+    }
+
+}
+
+@media(max-width: 480px){
+
+    .checkout-container{
+
+        padding: 30px 20px;
+    }
+
+    .checkout-container h1{
+
+        font-size: 28px;
+    }
+
+}
+/* ========================= */
+/* GRID */
+/* ========================= */
+
+.checkout-grid{
+
+    display: grid;
+
+    grid-template-columns: 1fr 350px;
+
+    gap: 40px;
+}
+
+/* ========================= */
+/* RESUMEN */
+/* ========================= */
+
+.checkout-summary{
+
+    background: rgba(255,255,255,0.05);
+
+    border: 1px solid rgba(255,255,255,0.1);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    height: fit-content;
+}
+
+/* TITULO */
+
+.checkout-summary h2{
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+}
+
+/* ITEMS */
+
+.summary-items{
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 20px;
+
+    margin-bottom: 30px;
+}
+
+/* ITEM */
+
+.summary-item{
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+}
+
+/* IMG */
+
+.summary-item img{
+
+    width: 70px;
+
+    height: 70px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+}
+
+/* TEXTO */
+
+.summary-item h4{
+
+    margin: 0 0 5px;
+}
+
+.summary-item p{
+
+    margin: 0;
+
+    color: #ff6600;
+}
+
+/* TOTALES */
+
+.summary-total p,
+.summary-total h3{
+
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.summary-total h3{
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    padding-top: 20px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 992px){
+
+    .checkout-grid{
+
+        grid-template-columns: 1fr;
+    }
+
+}
