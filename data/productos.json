@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "nombre": "Hoodie Chaos",
+        "precio": 95000,
+        "categoria": "ropa",
+        "imagen": "IMAGENES/personaliza.jpg",
+        "imagen_carrito": "IMAGENES/personaliza.jpg"
+    },
+    {
+        "id": 2,
+        "nombre": "Hoodie C&E",
+        "precio": 110000,
+        "categoria": "ropa",
+        "imagen": "IMAGENES/Nueva colleccion.jpeg",
+        "imagen_carrito": "IMAGENES/Nueva colleccion.jpeg"
+    },
+    {
+        "id": 3,
+        "nombre": "Snapback Street",
+        "precio": 55000,
+        "categoria": "accesorios",
+        "imagen": "IMAGENES/Nueva coleccion (1).jpeg",
+        "imagen_carrito": "IMAGENES/Nueva coleccion (1).jpeg"
+    },
+    {
+        "id": 4,
+        "nombre": "Jordan Retro",
+        "precio": 420000,
+        "categoria": "ropa",
+        "imagen": "IMAGENES/favicon.png",
+        "imagen_carrito": "IMAGENES/favicon.png"
+    }
+]

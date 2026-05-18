@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pasarela de Pagos | C&E Urban</title>
+    <title>Finalizar Compra | C&E Urban</title>
     <link rel="icon" href="IMAGENES/favicon.png">
     <link rel="stylesheet" href="CSS/pago.css">
 </head>
@@ -14,17 +14,17 @@
             <h1>Finalizar Compra</h1>
 
             <div class="checkout-grid">
-                <!-- FORMULARIO -->
-                <form class="checkout-form">
+                <!-- FORMULARIO CLIENTE -->
+                <form class="checkout-form" id="payment-form">
                     <input type="text" placeholder="Nombre completo" required>
                     <input type="email" placeholder="Correo electrónico" required>
-                    <input type="text" placeholder="Dirección" required>
+                    <input type="text" placeholder="Dirección de envío" required>
                     <input type="text" placeholder="Ciudad" required>
-                    <input type="tel" placeholder="Teléfono" required>
+                    <input type="tel" placeholder="Teléfono de contacto" required>
                     
                     <select required>
-                        <option value="">Método de pago</option>
-                        <option value="tarjeta">Tarjeta</option>
+                        <option value="">Selecciona método de pago</option>
+                        <option value="tarjeta">Tarjeta de Crédito / Débito</option>
                         <option value="nequi">Nequi</option>
                         <option value="daviplata">Daviplata</option>
                         <option value="pse">PSE</option>
@@ -33,16 +33,16 @@
                     <button type="submit">PAGAR AHORA</button>
                 </form>
 
-                <!-- RESUMEN DE COMPRA (Faltaba esta sección entera) -->
+                <!-- RESUMEN DINÁMICO -->
                 <div class="checkout-summary">
                     <h2>Resumen de Compra</h2>
-                    <div class="summary-items">
-                        <!-- Se llena dinámicamente con JS -->
+                    <div class="summary-items" id="summary-items-container">
+                        <!-- Llenado automático con JS -->
                     </div>
                     <div class="summary-total">
-                        <p>Subtotal: <span id="subtotal">$0</span></p>
-                        <p>Envío: <span>GRATIS</span></p>
-                        <h3>Total <span id="total">$0</span></h3>
+                        <p>Subtotal: <span id="checkout-subtotal">$0</span></p>
+                        <p>Envío: <span style="color: #00ff00; font-weight: bold;">GRATIS</span></p>
+                        <h3>Total <span id="checkout-total">$0</span></h3>
                     </div>
                 </div>
             </div>
