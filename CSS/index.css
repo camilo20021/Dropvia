@@ -994,3 +994,13 @@ body{
 
     cursor: pointer;
 }
+.checkout-btn{
+
+    text-decoration: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
