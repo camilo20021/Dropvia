@@ -13,7 +13,19 @@ document.addEventListener("DOMContentLoaded", () => {
     configurarBuscador();
     iniciarCarrusel();
     configurarMenuHamburguesa();
+    actualizarAdminLink();
 });
+
+function actualizarAdminLink() {
+    const adminLink = document.querySelector('.admin-link');
+    if (!adminLink) return;
+    const isAdmin = localStorage.getItem('ceurbanAdmin') === 'true';
+    if (isAdmin) {
+        adminLink.classList.remove('hidden');
+    } else {
+        adminLink.classList.add('hidden');
+    }
+}
 
 async function cargarProductos() {
     try {

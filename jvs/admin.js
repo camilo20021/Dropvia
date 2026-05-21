@@ -5,12 +5,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const ordersTableBody = document.querySelector('#orders-table tbody');
     const totalOrdersEl = document.getElementById('total-orders');
     const totalRevenueEl = document.getElementById('total-revenue');
+    const adminLink = document.querySelector('.admin-link');
+
+    const storedAdmin = localStorage.getItem('ceurbanAdmin') === 'true';
+    if (storedAdmin) {
+        if (adminLink) adminLink.classList.remove('hidden');
+        loginSection.classList.add('hidden');
+        dashboardSection.classList.remove('hidden');
+        cargarDashboard();
+    }
 
     btnLogin?.addEventListener('click', async () => {
         const user = document.getElementById('admin-user').value;
         const pass = document.getElementById('admin-pass').value;
 
         if (user === 'admin' && pass === 'admin123') {
+            localStorage.setItem('ceurbanAdmin', 'true');
+            if (adminLink) adminLink.classList.remove('hidden');
             loginSection.classList.add('hidden');
             dashboardSection.classList.remove('hidden');
             await cargarDashboard();

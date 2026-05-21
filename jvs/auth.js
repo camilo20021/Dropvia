@@ -6,6 +6,16 @@ document.addEventListener('DOMContentLoaded', () => {
     const userEmail = document.getElementById('user-email');
     const logoutBtn = document.getElementById('logout-btn');
     const manualForm = document.getElementById('manual-register');
+    const adminLink = document.querySelector('.admin-link');
+
+    function updateAdminLink() {
+        if (!adminLink) return;
+        if (localStorage.getItem('ceurbanAdmin') === 'true') {
+            adminLink.classList.remove('hidden');
+        } else {
+            adminLink.classList.add('hidden');
+        }
+    }
 
     function setUser(user) {
         localStorage.setItem('ceurbanUser', JSON.stringify(user));
@@ -94,10 +104,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (storedUser) {
         setUser(JSON.parse(storedUser));
     }
+    updateAdminLink();
 
     logoutBtn?.addEventListener('click', () => {
         localStorage.removeItem('ceurbanUser');
         setUser(null);
+        updateAdminLink();
         alert('Sesión cerrada.');
     });
 
