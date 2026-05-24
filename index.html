@@ -7,13 +7,12 @@
     <title>C&E Urban Wear</title>
     <link rel="icon" href="IMAGENES/favicon.png">
     <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/ux-improvements.css">
 </head>
 
 <body>
 
-    <!-- ========================= -->
-    <!-- HEADER -->
-    <!-- ========================= -->
+   
     <header class="header">
 
         <div class="logo">
@@ -117,12 +116,50 @@
     </section>
 
     <!-- ========================= -->
-    <!-- CATALOGO DE PRODUCTOS (DINÁMICO) -->
+    <!-- CATÁLOGO DE PRODUCTOS (DINÁMICO) -->
     <!-- ========================= -->
     <section class="productos">
         <div class="productos-header">
             <h2>LO MÁS NUEVO</h2>
             <a href="#">VER TODO</a>
+        </div>
+
+        <!-- FILTROS AVANZADOS -->
+        <div class="filter-section">
+            <h3>🔍 Filtros</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+                <!-- Filtro de Categoría -->
+                <div class="category-filter">
+                    <strong style="color: #ff6600; margin-bottom: 8px;">Categoría</strong>
+                    <label><input type="radio" name="category" value="todos" checked> Todos</label>
+                    <label><input type="radio" name="category" value="ropa"> Ropa</label>
+                    <label><input type="radio" name="category" value="accesorios"> Accesorios</label>
+                    <label><input type="radio" name="category" value="vehiculos"> Vehículos</label>
+                    <label><input type="radio" name="category" value="tecnologia"> Tecnología</label>
+                </div>
+
+                <!-- Filtro de Precio -->
+                <div>
+                    <strong style="color: #ff6600; margin-bottom: 8px; display: block;">Rango de Precio</strong>
+                    <div class="price-range-slider">
+                        <input type="number" id="min-price" placeholder="Mín" min="0">
+                        <input type="number" id="max-price" placeholder="Máx" min="0">
+                    </div>
+                    <button onclick="applyFilters()" style="width: 100%; margin-top: 8px; padding: 8px; background: #ff6600; color: white; border: none; border-radius: 6px; cursor: pointer;">Aplicar</button>
+                </div>
+
+                <!-- Ordenamiento -->
+                <div class="sort-filter">
+                    <strong style="color: #ff6600; margin-bottom: 8px;">Ordenar por:</strong>
+                    <select id="sort-select" onchange="applySort()">
+                        <option value="default">Recomendado</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name-asc">Nombre: A - Z</option>
+                        <option value="newest">Más Recientes</option>
+                    </select>
+                </div>
+            </div>
         </div>
 
         <!-- Botones de filtrado conectados con el JSON -->
@@ -267,9 +304,74 @@
     <!-- ========================= -->
     <!-- SCRIPTS (ORDEN DE CARGA CORRECTO) -->
     <!-- ========================= -->
+    <!-- Scripts de características avanzadas -->
+    <script src="jvs/advanced-features.js"></script>
+    <script src="jvs/ux-enhancements.js"></script>    <script src=\"jvs/user-dashboard.js\"></script>    
+    <!-- Scripts principales -->
     <script src="jvs/index.js"></script>
     <script src="jvs/carrito.js"></script>
     <script src="jvs/user-state.js"></script>
+
+    <!-- Script para filtros avanzados y vista rápida -->
+    <script>
+        // Actualizar UI del carrito al cargar
+        document.addEventListener('DOMContentLoaded', updateCartUI);
+
+        // Agregar vista rápida a productos
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('quick-view-btn')) {
+                const productId = parseInt(e.target.dataset.productId);
+                const product = listaProductos.find(p => p.id === productId);
+                if (product) quickViewModal.open(product);
+            }
+        });
+
+        // Aplicar filtros
+        function applyFilters() {
+            const category = document.querySelector('input[name="category"]:checked').value;
+            const minPrice = parseInt(document.getElementById('min-price').value) || 0;
+            const maxPrice = parseInt(document.getElementById('max-price').value) || Infinity;
+            const searchText = document.getElementById('search-input').value.toLowerCase();
+
+            let filtered = listaProductos.filter(p => {
+                const categoryMatch = category === 'todos' || p.categoria === category;
+                const priceMatch = p.precio >= minPrice && p.precio <= maxPrice;
+                const searchMatch = p.nombre.toLowerCase().includes(searchText);
+                return categoryMatch && priceMatch && searchMatch;
+            });
+
+            mostrarProductos(filtered);
+        }
+
+        // Ordenar productos
+        function applySort() {
+            const sortValue = document.getElementById('sort-select').value;
+            let sorted = [...listaProductos];
+
+            switch(sortValue) {
+                case 'price-asc':
+                    sorted.sort((a, b) => a.precio - b.precio);
+                    break;
+                case 'price-desc':
+                    sorted.sort((a, b) => b.precio - a.precio);
+                    break;
+                case 'name-asc':
+                    sorted.sort((a, b) => a.nombre.localeCompare(b.nombre));
+                    break;
+                case 'newest':
+                    sorted.sort((a, b) => b.id - a.id);
+                    break;
+            }
+
+            mostrarProductos(sorted);
+        }
+
+        // Combinar filtros y búsqueda
+        document.getElementById('search-input').addEventListener('input', applyFilters);
+        document.querySelectorAll('input[name="category"]').forEach(radio => {
+            radio.addEventListener('change', applyFilters);
+        });
+    </script>
 
 </body>
 </html>

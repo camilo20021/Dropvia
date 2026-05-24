@@ -53,18 +53,60 @@ function mostrarProductos(productos) {
         const card = document.createElement("article");
         card.classList.add("card");
         
+        // Verificar si es favorito
+        const isFavorite = wishlist && wishlist.isInWishlist(producto.id);
+        
         card.innerHTML = `
-            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div style="position: relative;">
+                <img src="${producto.imagen}" alt="${producto.nombre}">
+                <button class="wishlist-btn ${isFavorite ? 'active' : ''}" data-product-id="${producto.id}" title="Agregar a favoritos" style="position: absolute; top: 12px; left: 12px;">
+                    ${isFavorite ? '❤️' : '🤍'}
+                </button>
+            </div>
             <h3>${producto.nombre}</h3>
             <p>$${producto.precio.toLocaleString()}</p>
-            <button 
-                class="add-cart" 
-                data-name="${producto.nombre}" 
-                data-price="${producto.precio}" 
-                data-img="${producto.imagen_carrito}">
-                Agregar al carrito
-            </button>
+            <div style="display: flex; gap: 8px;">
+                <button 
+                    class="add-cart" 
+                    data-name="${producto.nombre}" 
+                    data-id="${producto.id}"
+                    data-price="${producto.precio}" 
+                    data-img="${producto.imagen_carrito}"
+                    style="flex: 1;">
+                    🛒 Agregar
+                </button>
+                <button 
+                    class="quick-view-btn" 
+                    data-product-id="${producto.id}"
+                    title="Vista rápida"
+                    style="flex: 0 0 44px; background: rgba(255,102,0,0.2); border: 1px solid #ff6600; color: #ff6600; border-radius: 6px; cursor: pointer;">
+                    👁️
+                </button>
+            </div>
         `;
+        
+        // Agregar listeners a los botones de favorito
+        const wishlistBtn = card.querySelector('.wishlist-btn');
+        if (wishlistBtn && wishlist) {
+            wishlistBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const productId = parseInt(e.target.dataset.productId);
+                const product = listaProductos.find(p => p.id === productId);
+                
+                if (wishlist.isInWishlist(productId)) {
+                    wishlist.removeFromWishlist(productId);
+                    e.target.textContent = '🤍';
+                    e.target.classList.remove('active');
+                    notifier.info('Removido de favoritos');
+                } else {
+                    wishlist.addToWishlist(product);
+                    e.target.textContent = '❤️';
+                    e.target.classList.add('active');
+                    notifier.success('Agregado a favoritos');
+                }
+            });
+        }
+        
         productosContainer.appendChild(card);
     });
 }

@@ -5,12 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Finalizar Compra | C&E Urban</title>
     <link rel="icon" href="IMAGENES/favicon.png">
+    <link rel="stylesheet" href="CSS/index.css">
     <link rel="stylesheet" href="CSS/pago.css">
+    
 </head>
 <body>
     <header class="header">
         <div class="logo">
-            <img src="IMAGENES/favicon.png" alt="Logo">
+            <img src="IMAGENES/favicon.png" alt="Logo" class="logo-img">
             <h1>C&E URBAN</h1>
         </div>
 
@@ -42,40 +44,123 @@
         </div>
     </header>
 
+    <!-- PROGRESS BAR -->
+    <div class="progress-section">
+        <div class="progress-bar-container">
+            <div class="progress-step active">
+                <div class="progress-dot">1</div>
+                <p>Carrito</p>
+            </div>
+            <div class="progress-line active"></div>
+            <div class="progress-step active">
+                <div class="progress-dot">2</div>
+                <p>Información</p>
+            </div>
+            <div class="progress-line"></div>
+            <div class="progress-step">
+                <div class="progress-dot">3</div>
+                <p>Confirmación</p>
+            </div>
+        </div>
+    </div>
+
     <section class="checkout-page">
         <div class="checkout-container">
-            <h1>Finalizar Compra</h1>
+            <div class="checkout-header">
+                <h1>🛒 Finalizar Compra</h1>
+                <p class="subtitle">Completa tus datos para procesar el pago</p>
+            </div>
 
             <div class="checkout-grid">
                 <!-- FORMULARIO CLIENTE -->
-                <form class="checkout-form" id="payment-form">
-                    <input id="customer-name" name="customerName" type="text" placeholder="Nombre completo" required>
-                    <input id="customer-email" name="customerEmail" type="email" placeholder="Correo electrónico" required>
-                    <input id="customer-address" name="customerAddress" type="text" placeholder="Dirección de envío" required>
-                    <input id="customer-city" name="customerCity" type="text" placeholder="Ciudad" required>
-                    <input id="customer-phone" name="customerPhone" type="tel" placeholder="Teléfono de contacto" required>
-                    
-                    <select id="payment-method" name="paymentMethod" required>
-                        <option value="">Selecciona método de pago</option>
-                        <option value="tarjeta">Tarjeta de Crédito / Débito</option>
-                        <option value="nequi">Nequi</option>
-                        <option value="daviplata">Daviplata</option>
-                        <option value="pse">PSE</option>
-                    </select>
+                <div class="form-section">
+                    <form class="checkout-form" id="payment-form">
+                        <div class="form-group">
+                            <label for="customer-name">Nombre Completo *</label>
+                            <input id="customer-name" name="customerName" type="text" placeholder="Juan Pérez" required>
+                        </div>
 
-                    <button type="submit">PAGAR AHORA</button>
-                </form>
+                        <div class="form-group">
+                            <label for="customer-email">Correo Electrónico *</label>
+                            <input id="customer-email" name="customerEmail" type="email" placeholder="tu@email.com" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-phone">Teléfono de Contacto *</label>
+                            <input id="customer-phone" name="customerPhone" type="tel" placeholder="+57 300 000 0000" required>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="customer-address">Dirección de Envío *</label>
+                            <input id="customer-address" name="customerAddress" type="text" placeholder="Calle 123 #45-67" required>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="customer-city">Ciudad *</label>
+                                <input id="customer-city" name="customerCity" type="text" placeholder="Bogotá" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="customer-zip">Código Postal</label>
+                                <input id="customer-zip" name="customerZip" type="text" placeholder="110111">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="payment-method">Método de Pago *</label>
+                            <select id="payment-method" name="paymentMethod" required>
+                                <option value="">Selecciona un método de pago</option>
+                                <option value="tarjeta">💳 Tarjeta de Crédito / Débito</option>
+                                <option value="nequi">📱 Nequi</option>
+                                <option value="daviplata">📱 Daviplata</option>
+                                <option value="pse">🏦 PSE</option>
+                            </select>
+                        </div>
+
+                        <div class="terms-check">
+                            <input type="checkbox" id="terms" required>
+                            <label for="terms">Acepto los términos y condiciones</label>
+                        </div>
+
+                        <button type="submit" class="btn-submit">💳 Pagar Ahora</button>
+                    </form>
+                </div>
 
                 <!-- RESUMEN DINÁMICO -->
                 <div class="checkout-summary">
-                    <h2>Resumen de Compra</h2>
+                    <h2>📋 Resumen de Compra</h2>
                     <div class="summary-items" id="summary-items-container">
                         <!-- Llenado automático con JS -->
                     </div>
                     <div class="summary-total">
-                        <p>Subtotal: <span id="checkout-subtotal">$0</span></p>
-                        <p>Envío: <span style="color: #00ff00; font-weight: bold;">GRATIS</span></p>
-                        <h3>Total <span id="checkout-total">$0</span></h3>
+                        <div class="summary-row">
+                            <p>Subtotal:</p>
+                            <span id="checkout-subtotal">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <p>Impuestos:</p>
+                            <span id="checkout-tax">$0</span>
+                        </div>
+                        <div class="summary-row">
+                            <p>Envío:</p>
+                            <span class="free-shipping">GRATIS</span>
+                        </div>
+                        <div class="summary-divider"></div>
+                        <div class="summary-row total-row">
+                            <h3>Total a Pagar:</h3>
+                            <h3 class="total-amount"><span id="checkout-total">$0</span></h3>
+                        </div>
+                    </div>
+
+                    <!-- BENEFICIOS -->
+                    <div class="benefits-box">
+                        <h4>✓ Ventajas</h4>
+                        <ul>
+                            <li>✅ Pago seguro y encriptado</li>
+                            <li>✅ Envío rápido a todo el país</li>
+                            <li>✅ Garantía de satisfacción</li>
+                            <li>✅ Devolución en 30 días</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -83,6 +168,12 @@
         </div>
     </section>
 
+    <footer class="footer">
+        <p>© 2026 C&E Urban Wear | Todos los derechos reservados | Pago seguro 🔒</p>
+    </footer>
+
+    <script src="jvs/advanced-features.js"></script>
+    <script src="jvs/ux-enhancements.js"></script>
     <script src="jvs/pago.js"></script>
     <script src="jvs/user-state.js"></script>
 </body>
