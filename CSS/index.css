@@ -38,6 +38,7 @@ body {
     top: 0;
     z-index: 100;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -384,10 +385,25 @@ body {
     color: white;
     font-size: 14px;
     width: 150px;
+    min-width: 100px;
 }
 
 #search-input::placeholder {
     color: #666;
+}
+
+@media (max-width: 768px) {
+    #search-input {
+        width: 100px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    #search-input {
+        width: 80px;
+        font-size: 12px;
+    }
 }
 
 .search-icon {
@@ -440,10 +456,30 @@ body {
     flex-direction: column;
     transition: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     padding: 30px;
+    overflow-y: auto;
 }
 
 .cart-panel.active {
     right: 0;
+}
+
+@media (max-width: 768px) {
+    .cart-panel {
+        width: 90vw;
+        max-width: 350px;
+        right: -90vw;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cart-panel {
+        width: 100vw;
+        max-width: 100vw;
+        right: -100vw;
+        padding: 15px;
+        border-radius: 0;
+    }
 }
 
 .cart-header {
@@ -806,6 +842,84 @@ body {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .productos {
+        padding: 60px 3%;
+    }
+    
+    .productos-header {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 30px;
+    }
+    
+    .productos-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+    
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 15px;
+    }
+    
+    .card {
+        padding: 12px;
+    }
+    
+    .card img {
+        height: 180px;
+        margin-bottom: 10px;
+    }
+    
+    .card h3 {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
+    
+    .card p {
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+    
+    .card button {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .productos {
+        padding: 40px 2%;
+    }
+    
+    .productos-header h2 {
+        font-size: 20px;
+    }
+    
+    .productos-grid {
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 10px;
+    }
+    
+    .card {
+        padding: 8px;
+    }
+    
+    .card img {
+        height: 140px;
+        margin-bottom: 8px;
+    }
+    
+    .card h3 {
+        font-size: 12px;
+    }
+    
+    .card p {
+        font-size: 11px;
+    }
+}
+
 /* ========================================== */
 /* SECCIÓN PERSONALIZADOS Y COMPONENTES */
 /* ========================================== */
@@ -837,6 +951,42 @@ body {
     margin-bottom: 30px;
 }
 
+@media (max-width: 768px) {
+    .personalizados {
+        padding: 60px 3%;
+        gap: 20px;
+    }
+    
+    .subtitulo-personalizados {
+        font-size: 14px;
+        letter-spacing: 2px;
+    }
+    
+    .personalizados-texto h2 {
+        font-size: 28px;
+        margin-bottom: 15px;
+    }
+    
+    .personalizados-texto p {
+        font-size: 14px;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .personalizados {
+        padding: 40px 2%;
+    }
+    
+    .personalizados-texto h2 {
+        font-size: 22px;
+    }
+    
+    .personalizados-texto p {
+        font-size: 12px;
+    }
+}
+
 /* BENEFICIOS */
 .beneficios {
     display: grid;
@@ -864,6 +1014,44 @@ body {
 .beneficio-card p {
     color: #777;
     font-size: 13px;
+}
+
+@media (max-width: 768px) {
+    .beneficios {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+        padding: 40px 3%;
+    }
+    
+    .beneficio-card {
+        padding: 15px;
+    }
+    
+    .beneficio-card .icono {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+    
+    .beneficio-card h3 {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    .beneficio-card p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .beneficios {
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 30px 2%;
+    }
+    
+    .beneficio-card .icono {
+        font-size: 24px;
+    }
 }
 
 /* ========================================== */
@@ -910,6 +1098,42 @@ body {
     color: white;
 }
 
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 25px;
+        padding: 40px 3%;
+    }
+    
+    .footer-box h2 {
+        font-size: 16px;
+    }
+    
+    .footer-box h3 {
+        font-size: 13px;
+    }
+    
+    .footer-box p {
+        font-size: 12px;
+    }
+    
+    .footer-box a {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 30px 2%;
+    }
+    
+    .footer-box {
+        text-align: center;
+    }
+}
+
 .copyright {
     text-align: center;
     padding: 20px;
@@ -943,9 +1167,64 @@ body {
 
 /* RESPONSIVE */
 @media (max-width: 768px) {
+    .header {
+        padding: 15px 3%;
+    }
+    
+    .logo h1 {
+        font-size: 16px;
+    }
+    
+    .icons {
+        gap: 12px;
+    }
+    
+    .search-container {
+        padding: 5px 10px;
+    }
+    
     .navbar { display: none; }
     .menu-toggle { display: block; }
     .hero, .personalizados { grid-template-columns: 1fr; text-align: center; }
     .hero-text h2 { font-size: 38px; }
     .hero-text .descripcion { margin: 0 auto 30px; }
+    .carrusel-contenedor { height: 320px; }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 12px 2%;
+    }
+    
+    .logo img {
+        width: 35px;
+        height: 35px;
+    }
+    
+    .logo h1 {
+        font-size: 14px;
+        letter-spacing: 1px;
+    }
+    
+    .icons {
+        gap: 8px;
+        font-size: 16px;
+    }
+    
+    .search-container {
+        padding: 4px 8px;
+    }
+    
+    .cart-icon {
+        font-size: 16px;
+    }
+    
+    #cart-count {
+        font-size: 9px;
+        padding: 1px 4px;
+    }
+    
+    .user-icon {
+        font-size: 16px;
+    }
 }

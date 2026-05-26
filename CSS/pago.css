@@ -1,6 +1,3 @@
-/* ========================================== */
-/* PÁGINA DE PAGO - ESTILOS PROFESIONALES */
-/* ========================================== */
 
 * {
     margin: 0;
@@ -14,14 +11,12 @@ body {
     color: white;
     min-height: 100vh;
     padding-top: 80px;
-    padding-bottom: 60px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
 }
 
-/* ========================================== */
-/* HEADER OPTIMIZADO */
-/* ========================================== */
+
 
 .header .logo-img {
     width: 32px !important;
